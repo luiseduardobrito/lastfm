@@ -28,6 +28,7 @@ export interface IUser {
 
 export interface ITrack {
   artist: IArtist;
+  album: IAlbum;
   date?: IDate;
   duration?: string;
   image: IImage[];
@@ -36,6 +37,7 @@ export interface ITrack {
   playcount?: string;
   streamable: IStreamable | string;
   url: string;
+  toptags?: { tag?: ITag[] };
 }
 
 export interface IArtist {
@@ -47,14 +49,14 @@ export interface IArtist {
   url?: string;
   "@attr"?: string;
   "#text"?: string;
-  tags?: { tag?: ITag[] }
+  tags?: { tag?: ITag[] };
 }
 
 export interface IAlbum {
   artist?: IArtist;
   image?: IImage[];
   mbid: string;
-  name?: string;
+  title?: string;
   playcount?: string;
   url?: string;
   "@attr"?: IAttr;

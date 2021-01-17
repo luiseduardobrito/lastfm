@@ -2,10 +2,55 @@
 import axios from "axios";
 import { IArtistGetInfo } from "../artist/artist.interface";
 import { IArtistGetInfoParams } from "../artist/params.interface";
-import { ITagGetInfoParams, ITagGetSimilarParams, ITagGetTopAlbumsParams, ITagGetTopArtistsParams, ITagGetTopTracksParams, ITagGetWeeklyChartListParams } from "../tag/params.interface";
-import { ITagGetInfo, ITagGetSimilar, ITagGetTopAlbums, ITagGetTopArtists, ITagGetTopTags, ITagGetTopTracks, ITagGetWeeklyChartList } from "../tag/tag.interface";
-import { IUserGetFriendsParams, IUserGetInfoParams, IUserGetLovedTracksParams, IUserGetPersonalTagsParams, IUserGetRecentTracksParams, IUserGetTopAlbumsParams, IUserGetTopArtistsParams, IUserGetTopTagsParams, IUserGetTopTracksParams, IUserGetWeeklyAlbumChartParams, IUserGetWeeklyArtistChartParams, IUserGetWeeklyChartListParams, IUserGetWeeklyTrackChartParams } from "../user/params.interface";
-import { IUserGetFriends, IUserGetInfo, IUserGetLovedTracks, IUserGetPersonalTags, IUserGetRecentTracks, IUserGetTopAlbums, IUserGetTopArtists, IUserGetTopTags, IUserGetTopTracks, IUserGetWeeklyAlbumChart, IUserGetWeeklyArtistChart, IUserGetWeeklyChartList, IUserGetWeeklyTrackChart } from "../user/user.interface";
+import {
+  ITagGetInfoParams,
+  ITagGetSimilarParams,
+  ITagGetTopAlbumsParams,
+  ITagGetTopArtistsParams,
+  ITagGetTopTracksParams,
+  ITagGetWeeklyChartListParams,
+} from "../tag/params.interface";
+import {
+  ITagGetInfo,
+  ITagGetSimilar,
+  ITagGetTopAlbums,
+  ITagGetTopArtists,
+  ITagGetTopTags,
+  ITagGetTopTracks,
+  ITagGetWeeklyChartList,
+} from "../tag/tag.interface";
+import { ITrackGetInfoParams } from "../track/params.interface";
+import { ITrackGetInfo } from "../track/track.interface";
+import {
+  IUserGetFriendsParams,
+  IUserGetInfoParams,
+  IUserGetLovedTracksParams,
+  IUserGetPersonalTagsParams,
+  IUserGetRecentTracksParams,
+  IUserGetTopAlbumsParams,
+  IUserGetTopArtistsParams,
+  IUserGetTopTagsParams,
+  IUserGetTopTracksParams,
+  IUserGetWeeklyAlbumChartParams,
+  IUserGetWeeklyArtistChartParams,
+  IUserGetWeeklyChartListParams,
+  IUserGetWeeklyTrackChartParams,
+} from "../user/params.interface";
+import {
+  IUserGetFriends,
+  IUserGetInfo,
+  IUserGetLovedTracks,
+  IUserGetPersonalTags,
+  IUserGetRecentTracks,
+  IUserGetTopAlbums,
+  IUserGetTopArtists,
+  IUserGetTopTags,
+  IUserGetTopTracks,
+  IUserGetWeeklyAlbumChart,
+  IUserGetWeeklyArtistChart,
+  IUserGetWeeklyChartList,
+  IUserGetWeeklyTrackChart,
+} from "../user/user.interface";
 
 axios.defaults.baseURL = "https://ws.audioscrobbler.com";
 
@@ -29,7 +74,8 @@ type Params =
   | IUserGetWeeklyArtistChartParams
   | IUserGetWeeklyChartListParams
   | IUserGetWeeklyTrackChartParams
-  | IArtistGetInfoParams;
+  | IArtistGetInfoParams
+  | ITrackGetInfoParams;
 type Response =
   | ITagGetInfo
   | ITagGetSimilar
@@ -51,7 +97,8 @@ type Response =
   | IUserGetWeeklyArtistChart
   | IUserGetWeeklyChartList
   | IUserGetWeeklyTrackChart
-  | IArtistGetInfo;
+  | IArtistGetInfo
+  | ITrackGetInfo;
 
 export class ApiRequest {
   public async lastFm(

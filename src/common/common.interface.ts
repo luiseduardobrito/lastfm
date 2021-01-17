@@ -47,6 +47,7 @@ export interface IArtist {
   url?: string;
   "@attr"?: string;
   "#text"?: string;
+  tags?: { tag?: ITag[] }
 }
 
 export interface IAlbum {
